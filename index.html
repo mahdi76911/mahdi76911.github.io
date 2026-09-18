@@ -38,7 +38,9 @@
   #themeToggle{cursor:pointer;background:none;border:1px solid var(--line);border-radius:8px;color:var(--muted);width:34px;height:34px;font-size:1rem;line-height:1;display:inline-flex;align-items:center;justify-content:center}
   #themeToggle:hover{color:var(--blue);border-color:var(--blue)}
 
-  header.hero{background:var(--hero-grad);color:#fff;padding:76px 0 64px}
+  header.hero{position:relative;background:var(--hero-grad);color:#fff;padding:76px 0 64px}
+  header.hero::before{content:"";position:absolute;inset:0;background:url('assets/hero-eye-bg.jpg') center/cover no-repeat;opacity:.16;pointer-events:none}
+  header.hero .wrap{position:relative;z-index:1}
   .hero h1{font-size:2.6rem;letter-spacing:-.5px;margin-bottom:6px}
   .hero .role{font-size:1.2rem;color:#cfe0f5;font-weight:500;margin-bottom:16px}
   .hero p.tag{max-width:620px;color:#e7f0fb;font-size:1.02rem;margin-bottom:22px}
@@ -142,12 +144,12 @@
   </div>
   <div class="figs2">
     <div class="fig">
-      <img src="assets/kitti-defog-comparison.png" alt="Before/after dehazing on a foggy KITTI street scene" loading="lazy">
-      <div class="cap">Before → after on a foggy KITTI street scene: haze removed while lane and vehicle structure stays intact.</div>
+      <img src="assets/kitti-dehazing-grid.png" alt="Dehazing methods compared side by side on a foggy KITTI street scene" loading="lazy">
+      <div class="cap">My method vs. classical &amp; deep baselines on a foggy KITTI street scene — haze removed while lane and vehicle structure stays intact.</div>
     </div>
     <div class="fig">
-      <img src="assets/carla-fog-dataset-grid.png" alt="Synthetic fog dataset generated in CARLA at 0–90% fog density" loading="lazy">
-      <div class="cap">Synthetic fog dataset built in CARLA — the same scene at 0–90% fog density, thousands of training pairs.</div>
+      <img src="assets/synthetic-fog-study.png" alt="Synthetic fog generation pipeline with depth map, fog-density maps and composited foggy scenes" loading="lazy">
+      <div class="cap">Synthetic fog generation pipeline: a depth map is shaped by β into a fog-density field and composited with intensity A — thousands of clean/foggy training pairs from one scene.</div>
     </div>
   </div>
 </div></section>
@@ -168,7 +170,7 @@
       <span class="tech">MATLAB · Python · OpenCV</span></div>
 
     <div class="card"><div class="kind">Deep Learning · CV</div>
-      <img src="assets/kitti-defog-comparison.png" alt="Foggy street scene before and after image dehazing" loading="lazy">
+      <img src="assets/kitti-yolo-detection-grid.png" alt="YOLO car detections on a KITTI scene, with and without dehazing" loading="lazy">
       <h3>YOLOv5 on KITTI</h3>
       <p>Custom data configs, KITTI→YOLO label conversion, trained weights — detection backbone for the dehazing evaluation pipeline.</p>
       <span class="tech">YOLOv5 · KITTI</span></div>
