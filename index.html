@@ -72,6 +72,7 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
   .card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(13,43,80,.12)}
   .card img{width:100%;height:160px;object-fit:cover;object-position:center;border-radius:8px;border:1px solid var(--line);margin-bottom:12px}
+  .card img.figimg{object-fit:contain;background:#fff}
   .card h3{font-size:1rem;color:var(--navy);margin-bottom:4px}
   [data-theme="dark"] .card h3{color:var(--ink)}
   .card .kind{font-size:.73rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
@@ -123,9 +124,9 @@
   <p class="tag">I turn hard visual problems into deployed systems — from foggy-image dehazing and object detection to pattern recognition and LLM-powered AI workflows.</p>
   <div class="pills">
     <span class="pill">Python</span><span class="pill">PyTorch</span><span class="pill">OpenCV</span>
-    <span class="pill">C++</span><span class="pill">Golang</span><span class="pill">FastAPI</span>
-    <span class="pill">Nest.js</span><span class="pill">Docker</span><span class="pill">vLLM</span>
-    <span class="pill">Deep Learning</span><span class="pill">Pattern Recognition</span>
+    <span class="pill">C++</span><span class="pill">Deep Learning</span><span class="pill">Pattern Recognition</span>
+    <span class="pill">Docker</span><span class="pill">vLLM</span><span class="pill">Golang · FastAPI</span>
+    <span class="pill">Nest.js</span>
   </div>
   <div class="links">
     <a class="btn solid" href="#projects">View projects</a>
@@ -135,10 +136,10 @@
 
 <section id="about"><div class="wrap">
   <h2>About</h2>
-  <p class="sub">I'm a Computer Vision and AI Engineer with an M.Sc. in Computer Science (Artificial Intelligence) from Amirkabir University of Technology and 5+ years across AI research, production backend, and mobile development. I like working where research meets shipping — from a Master's thesis in foggy-image dehazing with 3 academic papers, to real-time stock platforms, agentic AI workflows, and LLM serving at scale.</p>
+  <p class="sub">I'm a Computer Vision and AI Engineer with an M.Sc. in Computer Science (Artificial Intelligence) from Amirkabir University of Technology and 5+ years across AI research, production backend, and mobile development. I like working where research meets shipping — from a Master's thesis in foggy-image dehazing with 1 conference paper, to real-time stock platforms, agentic AI workflows, and LLM serving at scale.</p>
   <div class="stats">
     <div class="stat"><b>5+</b><span>years in software &amp; AI</span></div>
-    <div class="stat"><b>3</b><span>academic papers</span></div>
+    <div class="stat"><b>1</b><span>conference paper (plate recognition)</span></div>
     <div class="stat"><b>10+</b><span>dehazing methods benchmarked</span></div>
     <div class="stat"><b>8+</b><span>products led to cloud deployment</span></div>
   </div>
@@ -160,11 +161,13 @@
   <div class="cards">
 
     <div class="card"><div class="kind">Research · Deep Learning</div>
+      <img class="figimg" src="assets/gbda-architecture.png" alt="GBDA Net architecture: dehazing autoencoder with object-visibility-aware loss" loading="lazy">
       <h3>GBDA Net — Dehazing with Object-Visibility-Aware Loss</h3>
       <p>Master's thesis: single-image dehazing autoencoder trained with IoU of YOLOv5 detections, improving vehicle detection in fog by 22% for ADAS.</p>
       <span class="tech">PyTorch · YOLOv5 · KITTI · RESIDE</span></div>
 
     <div class="card"><div class="kind">Research · CV</div>
+      <img class="figimg" src="assets/classical-dehazing-methods.png" alt="Taxonomy of classical defogging methods: image restoration and image enhancement" loading="lazy">
       <h3>Classical Dehazing Methods Survey</h3>
       <p>Reproduced DCP, Retinex, CLAHE, Fattal and Tarel from the papers with per-method contrast metrics (SSIM, PSNR, UQI, no-reference) in MATLAB + Python.</p>
       <span class="tech">MATLAB · Python · OpenCV</span></div>
@@ -176,9 +179,16 @@
       <span class="tech">YOLOv5 · KITTI</span></div>
 
     <div class="card"><div class="kind">Deep Learning</div>
+      <img src="assets/license-plate-recognition.png" alt="Persian license plates: reference plates and synthetic test variations" loading="lazy">
       <h3>Persian License Plate Recognition</h3>
       <p>89%+ accuracy under challenging conditions with YOLO, CAPSNET and U-Net on a synthetic dataset of 10,000+ plates. Paper submitted.</p>
       <span class="tech">YOLO · CAPSNET · U-Net</span></div>
+
+    <div class="card"><div class="kind">Research · Synthetic Data</div>
+      <img class="figimg" src="assets/carla-simulator-pipeline.png" alt="Aerial CARLA simulator street scenes at increasing fog density" loading="lazy">
+      <h3>Forging Fog — CARLA Synthetic Fog Dataset</h3>
+      <p>Thousands of clean/foggy street-scene pairs generated in the CARLA simulator with controlled depth and fog density, extending the dehazing training pipeline beyond real-world KITTI/RESIDE.</p>
+      <span class="tech">CARLA · Python · OpenCV</span></div>
 
     <div class="card"><div class="kind">Backend · Golang</div>
       <h3>Sahmnak — Real-Time Stock Simulator</h3>
